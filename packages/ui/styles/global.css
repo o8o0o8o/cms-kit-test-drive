@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .no-children-margins {
+    & > * {
+      @apply !my-0;
+    }
+  }
+}
+
+/* todo: add layer */
+.swiper-wrapper {
+  display: flex;
+}
+
+.swiper-slide {
+  flex-shrink: 0;
+}

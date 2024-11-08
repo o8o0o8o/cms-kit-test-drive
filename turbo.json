@@ -1,0 +1,37 @@
+{
+  "$schema": "https://turborepo.org/schema.json",
+  "globalDependencies": ["**/.env.*local"],
+  "globalEnv": [
+    "NEXT_PUBLIC_*",
+    "SB_*",
+    "SANITY_*",
+    "NEXT_PREVIEW_TOKEN",
+    "storyblokApiToken",
+    "NODE_ENV",
+    "VERCEL_ENV"
+  ],
+  "tasks": {
+    "build": {
+      "cache": true,
+      "persistent": true,
+      "dependsOn": ["^build"],
+      "outputs": [".next/**", "!.next/cache/**", "dist/**"]
+    },
+    "start": {
+      "dependsOn": ["^build"]
+    },
+    "lint": {
+      "cache": true,
+      "persistent": true
+    },
+    "typecheck": {},
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "dev:turbo": {
+      "cache": false,
+      "persistent": true
+    }
+  }
+}
